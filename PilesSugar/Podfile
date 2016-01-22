@@ -1,0 +1,9 @@
+platform :ios, "8.0"
+use_frameworks!
+pod 'Alamofire'
+pod 'SnapKit'
+pod 'SwiftyJSON'
+pod 'Kingfisher'
+pod 'MJRefresh'
+pod 'SDCycleScrollView'
+pod 'ObjectMapper'
