@@ -32,27 +32,28 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xox-G1-yyD">
-                        <rect key="frame" x="50" y="209" width="26.5" height="12"/>
+                        <rect key="frame" x="50" y="159" width="26.5" height="62"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2分钟前" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdQ-Ox-ARR">
-                        <rect key="frame" x="233.5" y="209.5" width="36.5" height="12"/>
+                        <rect key="frame" x="233" y="209" width="36.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imx-NW-A3h">
-                        <rect key="frame" x="50" y="47" width="100" height="100"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imx-NW-A3h">
+                        <rect key="frame" x="50" y="49" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="NVc-ie-t7c"/>
-                            <constraint firstAttribute="height" constant="100" id="yje-eU-x9Y"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="yje-eU-x9Y"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yZO-Wd-nEt" firstAttribute="leading" secondItem="4wM-hC-fYg" secondAttribute="leading" constant="50" id="8Sp-Av-77g"/>
+                    <constraint firstItem="Xox-G1-yyD" firstAttribute="top" secondItem="imx-NW-A3h" secondAttribute="bottom" constant="10" id="9Lp-9x-QiP"/>
                     <constraint firstItem="yZO-Wd-nEt" firstAttribute="top" secondItem="4wM-hC-fYg" secondAttribute="top" constant="10" id="EVM-Lj-HRq"/>
                     <constraint firstItem="eSh-ix-pI8" firstAttribute="leading" secondItem="4wM-hC-fYg" secondAttribute="leading" constant="10" id="IK7-Ic-29y"/>
                     <constraint firstAttribute="bottom" secondItem="Xox-G1-yyD" secondAttribute="bottom" constant="10" id="QlA-3W-9vg"/>
@@ -76,6 +77,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="topic_comment_bg" width="23" height="25"/>
+        <image name="topic_comment_bg" width="46" height="50"/>
     </resources>
 </document>

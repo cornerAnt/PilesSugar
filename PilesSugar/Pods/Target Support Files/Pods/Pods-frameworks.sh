@@ -53,8 +53,10 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/AlamofireObjectMapper.framework'
   install_framework 'Pods/Kingfisher.framework'
   install_framework 'Pods/MJRefresh.framework'
+  install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/SDCycleScrollView.framework'
   install_framework 'Pods/SDWebImage.framework'
@@ -63,8 +65,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/AlamofireObjectMapper.framework'
   install_framework 'Pods/Kingfisher.framework'
   install_framework 'Pods/MJRefresh.framework'
+  install_framework 'Pods/NVActivityIndicatorView.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/SDCycleScrollView.framework'
   install_framework 'Pods/SDWebImage.framework'

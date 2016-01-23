@@ -39,6 +39,7 @@ class ClubClubController: UITableViewController {
         tableView!.tableFooterView = UIView()
         tableView!.tableHeaderView = UIView()
         tableView!.contentInset.top = 29
+        tableView!.rowHeight = 50
 
         tableView!.sectionHeaderHeight = 10
         tableView!.sectionFooterHeight = 0
@@ -111,10 +112,25 @@ extension ClubClubController {
 
     }
     
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-         return 50
-    }
+  
 }
 
+// MARK: - TableviewDelegate
+
+extension ClubClubController {
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        if indexPath.section == 1 {
+            
+            let vc = ClubMoreController()
+        
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    
+    }
+    
+    
+
+}

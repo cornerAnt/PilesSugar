@@ -14,7 +14,8 @@ private let commentH : CGFloat = 25
 class HomeHotModel: NSObject {
     
   
-    
+     var columnWidth: CGFloat = 0
+
     // photo
     /// 图片
     var path : String!
@@ -36,7 +37,7 @@ class HomeHotModel: NSObject {
     // 模型的高度
     var modelHeight: CGFloat?{
         
-        let columnWidth: CGFloat = 145.0
+       
         
         var finnalHeight :CGFloat = 0.0
          // 1.计算图片的高度
@@ -78,6 +79,8 @@ class HomeHotModel: NSObject {
         for (_,subJson):(String, JSON) in json["data"]["object_list"]{
             
             let homeHot = HomeHotModel()
+            
+            
             
             homeHot.path = subJson["photo"]["path"].stringValue
             homeHot.height = subJson["photo"]["height"].doubleValue

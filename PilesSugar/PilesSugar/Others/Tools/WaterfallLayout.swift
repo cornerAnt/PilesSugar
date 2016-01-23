@@ -32,11 +32,12 @@ import UIKit
 
 
 class WaterfallLayout: UICollectionViewLayout {
-
     
-     // MARK: - 属性
+    
+    // MARK: - 属性
     
     weak  var delegate: WaterfallLayoutDetegate?
+    
     // 默认行数
     private var columnCount:Int!{
         
@@ -47,18 +48,18 @@ class WaterfallLayout: UICollectionViewLayout {
         
         return temp
     }
-  
+    
     // 每一行的间距
     private var columnMargin : CGFloat!{
         
         guard let temp = delegate?.columnMarginInWaterflowLayout?(self) else{
-         
+            
             return 10.0
         }
         
         return temp
     }
-
+    
     // 每一列的间距
     
     private var rowMargin : CGFloat!{
@@ -70,7 +71,7 @@ class WaterfallLayout: UICollectionViewLayout {
         
         return temp
     }
-
+    
     // 内边距
     
     private var edgeInsets : UIEdgeInsets!{
@@ -91,13 +92,13 @@ class WaterfallLayout: UICollectionViewLayout {
     private var rowHeights = [CGFloat]()
     
     
-     // MARK: - 初始化
-
+    // MARK: - 初始化
+    
     
     override func prepareLayout() {
         super.prepareLayout()
         
-      
+        
         // 1.清除以前高度的缓存
         rowHeights.removeAll()
         
@@ -116,13 +117,13 @@ class WaterfallLayout: UICollectionViewLayout {
         // 3.创建cell的布局属性
         
         let count = collectionView!.numberOfItemsInSection(0)
-
+        
         for index in  0..<count {
             
             let indexPath = NSIndexPath(forItem: index, inSection: 0)
             
             if let attributes = self.layoutAttributesForItemAtIndexPath(indexPath){
-               layoutAttributes.append(attributes)
+                layoutAttributes.append(attributes)
             }
         }
         
@@ -137,13 +138,13 @@ class WaterfallLayout: UICollectionViewLayout {
         var maxRowHeight = rowHeights[0]
         
         for  index in 0..<columnCount {
-        
+            
             if maxRowHeight < rowHeights[index]{
                 
                 maxRowHeight = rowHeights[index]
             }
         }
-     
+        
         return CGSize(width: 0, height: maxRowHeight + edgeInsets.bottom)
     }
     
@@ -154,7 +155,7 @@ class WaterfallLayout: UICollectionViewLayout {
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-      return  layoutAttributes
+        return  layoutAttributes
     }
     
     /**
@@ -203,7 +204,6 @@ class WaterfallLayout: UICollectionViewLayout {
             
             attributesY = minrowHeight + columnMargin
         }
-        
         
         // 设置每一个cell的frame
         

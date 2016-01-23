@@ -7,3 +7,6 @@ pod 'Kingfisher'
 pod 'MJRefresh'
 pod 'SDCycleScrollView'
 pod 'ObjectMapper'
+pod 'NVActivityIndicatorView'
+pod 'AlamofireObjectMapper'
+

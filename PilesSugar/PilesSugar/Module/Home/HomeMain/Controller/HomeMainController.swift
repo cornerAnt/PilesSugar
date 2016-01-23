@@ -22,7 +22,7 @@ class HomeMainController: UIViewController {
         
         addChildViewController(HomeHotController())
         
-        addChildViewController(TestViewController())
+        addChildViewController(HomeAttentionController())
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "话题", titleColor: UIColor.grayColor(), target: self, action: Selector("leftBarButtonClick"))
         

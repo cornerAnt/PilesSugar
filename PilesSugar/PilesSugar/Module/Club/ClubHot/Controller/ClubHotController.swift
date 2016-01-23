@@ -100,6 +100,12 @@ extension ClubHotController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         
-        DEBUGLOG(indexPath.row)
+        let model = models[indexPath.row]
+        
+        let vc = ClubTopicController()
+        
+        vc.topicID = "\(model.id!)"
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

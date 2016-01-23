@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,12 +62,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>02CC2E772916A2E51244041EA3B875AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0D15F1F56A005488EB4591D8E719B212</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1FB2BDB34D23361718163E54C0D08288</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2991A14183A1814F62E97440566B9556</key>
+		<key>266BE23442F6745EDDD49D5B2D045202</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>304065D07587255E03D7F31F668CD6F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6341E357B5489E6365EF1608399F5D33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>887054566F055BE69473DA03C3D0135C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9666688CB41B38A9914616144C9C7A3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>982AABE915426FC229CE230F99D433CA</key>
+		<key>9FFB135C0A35C301991900291E03DC58</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE9EE08D0A39F00F7939FA60D79AEB5A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C9BAF00742270CC863576DBE4DD09A00</key>
+		<key>BA282D7F6023EE4AD6DF0825EE3AA9F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

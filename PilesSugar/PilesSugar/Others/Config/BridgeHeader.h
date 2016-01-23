@@ -10,5 +10,5 @@
 #define BridgeHeader_h
 
 #import "YYWebImage.h"
-
+#import "UITableView+FDTemplateLayoutCell.h"
 #endif /* BridgeHeader_h */
