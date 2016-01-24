@@ -20,7 +20,7 @@ class ClubClubController: UITableViewController {
         
         setupTableView()
         
-        loadData()        
+        
     }
     
     init(){
@@ -37,19 +37,19 @@ class ClubClubController: UITableViewController {
         tableView!.registerNib(UINib(nibName: ClubClubCellID, bundle: nil), forCellReuseIdentifier: ClubClubCellID)
         
         tableView!.tableFooterView = UIView()
-        tableView!.tableHeaderView = UIView()
-        tableView!.contentInset.top = 29
         tableView!.rowHeight = 50
-
-        tableView!.sectionHeaderHeight = 10
-        tableView!.sectionFooterHeight = 0
-
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: Selector("loadData"), forControlEvents: UIControlEvents.ValueChanged)
-        
+        tableView!.contentInset.top = 29
+        tableView!.sectionHeaderHeight = 0
+        tableView!.sectionFooterHeight = 10
+       loadNewData()
+//        tableView!.mj_header = RefreshHeader.init(refreshingBlock: { () -> Void in
+//            
+//            self.loadNewData()
+//        })
+//        tableView!.mj_header.beginRefreshing()
     }
     
-    @objc private func loadData(){
+     private func loadNewData(){
         
         let url = "http://www.duitang.com/napi/club/list/by_user_id/?app_code=gandalf&app_version=5.8%20rv%3A149591&device_name=Unknown%20iPhone&device_platform=iPhone6%2C1&include_fields=check_in&limit=0&locale=zh_CN&platform_name=iPhone%20OS&platform_version=9.2.1&screen_height=568&screen_width=320&start=0&user_id=11189659"
         
@@ -59,12 +59,12 @@ class ClubClubController: UITableViewController {
             
             self.tableView.reloadData()
             
-            self.refreshControl?.endRefreshing()
+//            self.tableView!.mj_header.endRefreshing()
             
             }) { (error) -> () in
                 
                 DEBUGLOG(error)
-                self.refreshControl?.endRefreshing()
+//            self.tableView!.mj_header.endRefreshing()
                 
         }
         

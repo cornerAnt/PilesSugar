@@ -2,93 +2,95 @@
 //  ExploreMainController.swift
 //  PilesSugar
 //
-//  Created by SoloKM on 16/1/14.
+//  Created by SoloKM on 16/1/24.
 //  Copyright © 2016年 SoloKM. All rights reserved.
 //
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let ExploreMainCellID = "ExploreMainCell"
+private let urlString = "http://www.duitang.com/napi/index/groups/?app_code=gandalf&app_version=5.9%20rv%3A150681&device_name=Unknown%20iPhone&device_platform=iPhone6%2C1&locale=zh_CN&platform_name=iPhone%20OS&platform_version=9.2.1&screen_height=568&screen_width=320"
 
-class ExploreMainController: UICollectionViewController {
+class ExploreMainController: UITableViewController {
 
+    var models = [ExploreMainModel]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+       setupTableView()
+        
+      
     }
-
+    private func setupTableView() {
+        
+        tableView.registerNib(UINib(nibName: ExploreMainCellID, bundle: nil), forCellReuseIdentifier: ExploreMainCellID)
+        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.contentInset.top = 5
+        loadData()
+    }
+    
+    private func loadData(){
+        
+        
+        
+        
+        NetWorkTool.sharedInstance.get(urlString, parameters: nil, success: { (response) -> () in
+            
+            self.models = ExploreMainModel.loadExploreMainModels(response!)
+            
+            
+            self.tableView.reloadData()
+            
+            }) { (error) -> () in
+                
+                DEBUGLOG(error)
+                
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+}
+// MARK: - Table view data source
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+extension ExploreMainController {
     
-        // Configure the cell
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return models.count
+    }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(ExploreMainCellID) as! ExploreMainCell
+        
+        cell.exploreMainModel = models[indexPath.row]
+        
+        cell.delegate = self
+        
         return cell
+        
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 180 : 120
     }
-    */
+}
 
+
+extension ExploreMainController : ExploreMainCellDetegate {
+
+    func exploreCollectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        DEBUGLOG(indexPath)
+    }
+    
 }

@@ -35,11 +35,9 @@ class ClubHotCell: UITableViewCell {
             
 
             comment_countButton.setTitle(tempStr , forState: UIControlState.Normal)
-            if let path =  clubHotModel.path {
-                photoImageView.hidden =  (path == "")
-                photoImageView.yy_imageURL = NSURL(string: path)
-            }
-            
+        
+            photoImageView.yy_imageURL = NSURL(string: clubHotModel.path!)
+           
             contentLabel.text = clubHotModel.content
             userInfoLabel.text = clubHotModel.name! + " - " + clubHotModel.username!
             

@@ -11,4 +11,7 @@
 
 #import "YYWebImage.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "RefreshHeader.h"
+#import "RefreshFooter.h"
+
 #endif /* BridgeHeader_h */

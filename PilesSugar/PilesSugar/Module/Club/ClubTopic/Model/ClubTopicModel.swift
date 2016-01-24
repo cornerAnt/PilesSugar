@@ -29,12 +29,12 @@ class ClubTopicModel: NSObject {
    
     }
     
-    class func loadClubTopicModels(data:NSData) -> [ClubTopicModel]{
+    class func loadClubTopicModels(data:NSData) -> [[ClubTopicModel]]{
         
         let json = JSON(data: data)
         
         
-        var clubTopicModels = [ClubTopicModel]()
+        var clubTopicModels = [[ClubTopicModel](),[ClubTopicModel]()]
         
         for (_,subJson):(String, JSON) in json["data"]["object_list"]{
             
@@ -72,7 +72,14 @@ class ClubTopicModel: NSObject {
 
             clubTopicModel.replies.sender.avatar = subJson["replies"][0]["sender"]["avatar"].stringValue
             
-            clubTopicModels.append(clubTopicModel)
+            
+            if subJson["type"].stringValue == "HOT" {
+                
+                clubTopicModels[0].append(clubTopicModel)
+                
+            }else{
+                 clubTopicModels[1].append(clubTopicModel)
+            }
             
             
         }
@@ -83,15 +90,6 @@ class ClubTopicModel: NSObject {
   
 }
 
-class Sender: NSObject {
-    
-    
-    var username: String!
-    var avatar: String!
-    
-
-    
-}
 
 class Replies: NSObject {
     
@@ -101,7 +99,7 @@ class Replies: NSObject {
     var content: String!
 
 
-   
+
     
 }
 

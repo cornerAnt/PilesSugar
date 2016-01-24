@@ -53,8 +53,6 @@ class ClubMoreController: UIViewController {
     func loadListData(indexPath: NSIndexPath) {
         
         
-        
-        
         let url = "http://www.duitang.com/napi/club/list/by_filter_id/?filter_id=Club_" + themeData[indexPath.row].stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         
         

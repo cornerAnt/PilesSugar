@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="232" id="dAl-Ue-TsO" customClass="ClubHotCell" customModule="PilesSugar" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="280" height="232"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="dAl-Ue-TsO" customClass="ClubHotCell" customModule="PilesSugar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="151"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dAl-Ue-TsO" id="4wM-hC-fYg">
-                <rect key="frame" x="0.0" y="0.0" width="280" height="231.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="306" height="150.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSh-ix-pI8">
@@ -26,25 +26,25 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZO-Wd-nEt">
-                        <rect key="frame" x="50" y="10" width="200" height="29"/>
+                        <rect key="frame" x="50" y="10" width="226" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xox-G1-yyD">
-                        <rect key="frame" x="50" y="159" width="26.5" height="62"/>
+                        <rect key="frame" x="50" y="128.5" width="26.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2分钟前" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdQ-Ox-ARR">
-                        <rect key="frame" x="233" y="209" width="36.5" height="12"/>
+                        <rect key="frame" x="259.5" y="128.5" width="36.5" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imx-NW-A3h">
-                        <rect key="frame" x="50" y="49" width="100" height="100"/>
+                        <rect key="frame" x="50" y="49" width="100" height="69.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="NVc-ie-t7c"/>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="yje-eU-x9Y"/>
@@ -73,7 +73,7 @@
                 <outlet property="photoImageView" destination="imx-NW-A3h" id="GXb-ZC-baU"/>
                 <outlet property="userInfoLabel" destination="Xox-G1-yyD" id="Xhn-Qs-46R"/>
             </connections>
-            <point key="canvasLocation" x="103" y="314"/>
+            <point key="canvasLocation" x="26" y="302.5"/>
         </tableViewCell>
     </objects>
     <resources>

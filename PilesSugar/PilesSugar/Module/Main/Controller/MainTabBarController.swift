@@ -39,8 +39,8 @@ class MainTabBarController: UITabBarController,UITabBarControllerDelegate {
     private func addAllVcs(){
         
         addOneVc(HomeMainController(), title: "首页", image: "tab_icon_home")
-        addOneVc(UIViewController(), title: "发现", image: "tab_icon_explore")
-        addOneVc(UIViewController(), title: "商店", image: "tab_icon_store")
+        addOneVc(ExploreMainController(), title: "发现", image: "tab_icon_explore")
+        addOneVc(StoreController(), title: "商店", image: "tab_icon_store")
         addOneVc(ClubMainController(), title: "Club", image: "tab_icon_club")
         addOneVc(MeMainController(), title: "我", image: "tab_icon_me")
       

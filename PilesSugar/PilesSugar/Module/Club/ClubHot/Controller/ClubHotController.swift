@@ -13,14 +13,17 @@ private let ClubHotCellID = "ClubHotCell"
 class ClubHotController: UITableViewController {
 
     
-    var models = [ClubHotModel]()
+   private var models = [ClubHotModel]()
+    
+   private var pageCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
          setupTableView()
-        loadData()
+        
+        
     }
     
     private func setupTableView() {
@@ -29,29 +32,59 @@ class ClubHotController: UITableViewController {
         
         tableView!.tableFooterView = UIView()
         
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: Selector("loadData"), forControlEvents: UIControlEvents.ValueChanged)
+        tableView!.mj_header = RefreshHeader.init(refreshingBlock: { () -> Void in
+            
+            self.loadNewData()
+        })
+        tableView!.mj_header.beginRefreshing()
+        tableView!.mj_footer = RefreshFooter.init(refreshingBlock: { () -> Void in
+            self.loadMoreData()
+        })
         
     }
     
-    @objc private func loadData(){
+     private func loadNewData(){
         
-    let url = "http://www.duitang.com/napi/topic/list/by_tags/?__dtac=%257B%2522_r%2522%253A%2520%2522550043%2522%257D&app_code=gandalf&app_version=5.8%20rv%3A149591&device_name=Unknown%20iPhone&device_platform=iPhone6%2C1&limit=25&locale=zh_CN&platform_name=iPhone%20OS&platform_version=9.2&screen_height=568&screen_width=320&start=0&tags=%E7%B2%BE%E9%80%89"
+    let url = "http://www.duitang.com/napi/topic/list/by_tags/?&start=0&tags=%E7%B2%BE%E9%80%89"
         
     NetWorkTool.sharedInstance.get(url, parameters: nil, success: { (response) -> () in
         
         self.models = ClubHotModel.loadCulbHotModels(response!)
         
+        
         self.tableView.reloadData()
         
-        self.refreshControl?.endRefreshing()
+        self.tableView!.mj_header.endRefreshing()
         
         }) { (error) -> () in
             
             DEBUGLOG(error)
-            self.refreshControl?.endRefreshing()
+           self.tableView!.mj_header.endRefreshing()
 
     }
+        
+    }
+    
+    private func loadMoreData(){
+        
+        pageCount += 25
+        
+        let url = "http://www.duitang.com/napi/topic/list/by_tags/?&start=" + "\(pageCount)" + "&tags=%E7%B2%BE%E9%80%89"
+        
+        NetWorkTool.sharedInstance.get(url, parameters: nil, success: { (response) -> () in
+            
+            self.models += ClubHotModel.loadCulbHotModels(response!)
+            
+            self.tableView.reloadData()
+            
+            self.tableView!.mj_footer.endRefreshing()
+            
+            }) { (error) -> () in
+                
+                
+            self.tableView!.mj_footer.endRefreshing()
+                
+        }
         
     }
     
@@ -71,6 +104,7 @@ extension ClubHotController {
     
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return models.count
     }
     
@@ -87,9 +121,10 @@ extension ClubHotController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let model = models[indexPath.row]
-        
-        return model.modelHeight
+        let clubHotModel = models[indexPath.row]
+
+        return clubHotModel.modelHeight
+
     }
 }
 
@@ -104,8 +139,8 @@ extension ClubHotController {
         
         let vc = ClubTopicController()
         
-        vc.topicID = "\(model.id!)"
         
+        vc.clubTopicModel = model
         navigationController?.pushViewController(vc, animated: true)
     }
 }

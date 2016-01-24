@@ -13,21 +13,25 @@ private let avatarWidth : CGFloat = 100.0
 
 class ClubHotModel: NSObject {
     
-    var id :Int?
+    var id :Int!
     
-    var path: String?
+    var path: String!
     
-    var comment_count:Int?
+    var comment_count:Int!
+     var visit_count:Int!
     
-    var content:String?
+    var content:String!
 
-    var avatar:String?
+    var avatar:String!
     
-    var name:String?
-    var username:String?
+    var name:String!
+    var username:String!
 
-    var active_time:Int?
-    var add_datetime_ts:Int?
+    var active_time:Int!
+    var add_datetime_ts:Int!
+    
+    
+   
     
     // 最终cell的高度
     var modelHeight:CGFloat!{
@@ -42,10 +46,10 @@ class ClubHotModel: NSObject {
         finalHeight += contentHeight + kCommenMargin
         
         // 2.计算图片高度
-        if avatar != "" {
-            finalHeight += avatarWidth + kCommenMargin
+        if path.isEmpty {
+            finalHeight +=  kCommenMargin
         }else{
-            finalHeight += kCommenMargin
+            finalHeight += avatarWidth + kCommenMargin
         }
         // 3.计算用户信息高度
         let userInfoHeight =  name!.getTextRectSize(UIFont.systemFontOfSize(9), size: CGSize(width: contentWidth, height: 200)).height
@@ -56,21 +60,21 @@ class ClubHotModel: NSObject {
         
     }
 
-
-    override init() {
-        super.init()
-        
-        comment_count = 0
-        content = ""
-        avatar = ""
-        name   = ""
-        username = ""
-        active_time = 0
-        add_datetime_ts = 0
-        path = ""
-        
-        
-    }
+//
+//    override init() {
+//        super.init()
+//        
+//        comment_count = 0
+//        content = ""
+//        avatar = ""
+//        name   = ""
+//        username = ""
+//        active_time = 0
+//        add_datetime_ts = 0
+//        path = ""
+//        
+//        
+//    }
     
     class func loadCulbHotModels(data:NSData) -> [ClubHotModel]{
         
@@ -88,6 +92,7 @@ class ClubHotModel: NSObject {
         
             
             clubHotModel.comment_count = subJson["comment_count"].intValue
+            clubHotModel.visit_count = subJson["visit_count"].intValue
             clubHotModel.active_time = subJson["active_time"].intValue
             clubHotModel.add_datetime_ts = subJson["add_datetime_ts"].intValue
             
@@ -100,9 +105,6 @@ class ClubHotModel: NSObject {
             
             clubHotModel.username = subJson["sender"]["username"].stringValue
             
-          
-            
-        
             clubHotModels.append(clubHotModel)
             
         }
