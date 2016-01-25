@@ -8,12 +8,41 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeHotBannerCell" customModule="PilesSugar" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="128" height="146"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="128" height="146"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMJ-pH-qTi">
+                        <rect key="frame" x="0.0" y="126" width="128" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Xt0-Mb-VW6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZb-ga-ZvR">
+                        <rect key="frame" x="0.0" y="0.0" width="128" height="121"/>
+                    </imageView>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="kZb-ga-ZvR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6kT-YL-h1V"/>
+                <constraint firstItem="JMJ-pH-qTi" firstAttribute="top" secondItem="kZb-ga-ZvR" secondAttribute="bottom" constant="5" id="Drz-9J-SFN"/>
+                <constraint firstItem="kZb-ga-ZvR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="akH-RX-LCk"/>
+                <constraint firstAttribute="trailing" secondItem="JMJ-pH-qTi" secondAttribute="trailing" id="dSp-XV-eWW"/>
+                <constraint firstItem="JMJ-pH-qTi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g1W-um-8vx"/>
+                <constraint firstAttribute="trailing" secondItem="kZb-ga-ZvR" secondAttribute="trailing" id="lU9-5w-358"/>
+                <constraint firstAttribute="bottom" secondItem="JMJ-pH-qTi" secondAttribute="bottom" id="ywr-z6-FdP"/>
+            </constraints>
+            <size key="customSize" width="128" height="146"/>
+            <connections>
+                <outlet property="iconImageView" destination="kZb-ga-ZvR" id="PXF-ip-cNH"/>
+                <outlet property="titleLabel" destination="JMJ-pH-qTi" id="Pik-oW-oL8"/>
+            </connections>
+            <point key="canvasLocation" x="223" y="277"/>
         </collectionViewCell>
     </objects>
 </document>

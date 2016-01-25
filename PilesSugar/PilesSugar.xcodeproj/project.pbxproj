@@ -16,10 +16,12 @@
 		400F13621C54B07A001D0B4E /* ExploreMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F13611C54B07A001D0B4E /* ExploreMainController.swift */; };
 		400F13651C54B1D5001D0B4E /* ExploreMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F13631C54B1D5001D0B4E /* ExploreMainCell.swift */; };
 		400F13661C54B1D5001D0B4E /* ExploreMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400F13641C54B1D5001D0B4E /* ExploreMainCell.xib */; };
-		400F136A1C54E27E001D0B4E /* HomeHotBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F13691C54E27E001D0B4E /* HomeHotBannerView.swift */; };
 		400F13A71C54E40D001D0B4E /* HomeHotBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F13A51C54E40D001D0B4E /* HomeHotBannerCell.swift */; };
 		400F13A81C54E40D001D0B4E /* HomeHotBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400F13A61C54E40D001D0B4E /* HomeHotBannerCell.xib */; };
 		400F13AA1C54E9A4001D0B4E /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F13A91C54E9A4001D0B4E /* StoreController.swift */; };
+		4078A3C21C54F87E00BE302B /* HomeHotHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078A3C11C54F87E00BE302B /* HomeHotHeaderView.swift */; };
+		4078A3C41C54F8B400BE302B /* HomeHotHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4078A3C31C54F8B400BE302B /* HomeHotHeaderView.xib */; };
+		4078A3C61C54FA4C00BE302B /* HomeHotBannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4078A3C51C54FA4C00BE302B /* HomeHotBannerModel.swift */; };
 		408D53831C45F33400AF9C4D /* ClubHotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D53821C45F33400AF9C4D /* ClubHotController.swift */; };
 		408D53851C45F35F00AF9C4D /* ClubHotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D53841C45F35F00AF9C4D /* ClubHotModel.swift */; };
 		408D53881C45F38000AF9C4D /* ClubHotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408D53861C45F38000AF9C4D /* ClubHotCell.swift */; };
@@ -146,10 +148,12 @@
 		400F13611C54B07A001D0B4E /* ExploreMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreMainController.swift; sourceTree = "<group>"; };
 		400F13631C54B1D5001D0B4E /* ExploreMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreMainCell.swift; sourceTree = "<group>"; };
 		400F13641C54B1D5001D0B4E /* ExploreMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExploreMainCell.xib; sourceTree = "<group>"; };
-		400F13691C54E27E001D0B4E /* HomeHotBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotBannerView.swift; sourceTree = "<group>"; };
 		400F13A51C54E40D001D0B4E /* HomeHotBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotBannerCell.swift; sourceTree = "<group>"; };
 		400F13A61C54E40D001D0B4E /* HomeHotBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHotBannerCell.xib; sourceTree = "<group>"; };
 		400F13A91C54E9A4001D0B4E /* StoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		4078A3C11C54F87E00BE302B /* HomeHotHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotHeaderView.swift; sourceTree = "<group>"; };
+		4078A3C31C54F8B400BE302B /* HomeHotHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHotHeaderView.xib; sourceTree = "<group>"; };
+		4078A3C51C54FA4C00BE302B /* HomeHotBannerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHotBannerModel.swift; sourceTree = "<group>"; };
 		408D53821C45F33400AF9C4D /* ClubHotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubHotController.swift; sourceTree = "<group>"; };
 		408D53841C45F35F00AF9C4D /* ClubHotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubHotModel.swift; sourceTree = "<group>"; };
 		408D53861C45F38000AF9C4D /* ClubHotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubHotCell.swift; sourceTree = "<group>"; };
@@ -963,6 +967,7 @@
 			isa = PBXGroup;
 			children = (
 				40E184B91C44E57100F1EB13 /* HomeHotModel.swift */,
+				4078A3C51C54FA4C00BE302B /* HomeHotBannerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -972,7 +977,8 @@
 			children = (
 				40E184BB1C44E59000F1EB13 /* HomeHotCell.swift */,
 				40E184BC1C44E59000F1EB13 /* HomeHotCell.xib */,
-				400F13691C54E27E001D0B4E /* HomeHotBannerView.swift */,
+				4078A3C11C54F87E00BE302B /* HomeHotHeaderView.swift */,
+				4078A3C31C54F8B400BE302B /* HomeHotHeaderView.xib */,
 				400F13A51C54E40D001D0B4E /* HomeHotBannerCell.swift */,
 				400F13A61C54E40D001D0B4E /* HomeHotBannerCell.xib */,
 			);
@@ -1239,6 +1245,7 @@
 				400F13A81C54E40D001D0B4E /* HomeHotBannerCell.xib in Resources */,
 				400F13471C546351001D0B4E /* ExploreBannerCell.xib in Resources */,
 				408FE9E81C4401450043712F /* LoginController.xib in Resources */,
+				4078A3C41C54F8B400BE302B /* HomeHotHeaderView.xib in Resources */,
 				40AD5FEA1C525BF900DEB0CC /* ClubTopicCell.xib in Resources */,
 				40978A641C46525D000F9DCC /* HomeAddController.xib in Resources */,
 				40F7EF771C50C09B00F05620 /* ClubClubCell.xib in Resources */,
@@ -1328,6 +1335,7 @@
 				400F13461C546351001D0B4E /* ExploreBannerCell.swift in Sources */,
 				40E184BA1C44E57100F1EB13 /* HomeHotModel.swift in Sources */,
 				40B851831C435C7F003B516C /* UICollectionViewController.swift in Sources */,
+				4078A3C21C54F87E00BE302B /* HomeHotHeaderView.swift in Sources */,
 				400F13A71C54E40D001D0B4E /* HomeHotBannerCell.swift in Sources */,
 				40E185361C4547EF00F1EB13 /* YYFrameImage.m in Sources */,
 				40CC710E1C5366B8004BFC2B /* ClubTopicHeaderCell.swift in Sources */,
@@ -1369,6 +1377,7 @@
 				400F134D1C546478001D0B4E /* ExploreMainModel.swift in Sources */,
 				40AD5FE61C525BE300DEB0CC /* ClubTopicModel.swift in Sources */,
 				408D53881C45F38000AF9C4D /* ClubHotCell.swift in Sources */,
+				4078A3C61C54FA4C00BE302B /* HomeHotBannerModel.swift in Sources */,
 				40E185391C4547EF00F1EB13 /* YYSpriteSheetImage.m in Sources */,
 				408FE9E31C43F97D0043712F /* RegisterController.swift in Sources */,
 				40E1853A1C4547EF00F1EB13 /* YYImageCache.m in Sources */,
@@ -1381,7 +1390,6 @@
 				40F7EF6F1C50B9BF00F05620 /* ClubClubModel.swift in Sources */,
 				408FE9C01C4361390043712F /* MeMainController.swift in Sources */,
 				40E185381C4547EF00F1EB13 /* YYImageCoder.m in Sources */,
-				400F136A1C54E27E001D0B4E /* HomeHotBannerView.swift in Sources */,
 				40B851821C435C7F003B516C /* UIButton.swift in Sources */,
 				40978A581C464F3F000F9DCC /* HomeMainController.swift in Sources */,
 				40AD5FE91C525BF900DEB0CC /* ClubTopicCell.swift in Sources */,
