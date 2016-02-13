@@ -34,7 +34,5 @@ PilesSugar
 
 
 
-我的简书地址,里面有项目全部的过程,和遇到的坑,希望能合大家一起多多进步!
-
-http://www.jianshu.com/users/a7fde1da32c8/latest_articles
+希望能和大家多多交流
 
